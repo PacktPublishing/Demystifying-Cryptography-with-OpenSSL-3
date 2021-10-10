@@ -98,7 +98,7 @@ int decrypt(FILE* in_file, FILE* out_file, const unsigned char* key, size_t auth
     size_t current_pos = in_nbytes;
 
     ctx = EVP_CIPHER_CTX_new();
-    EVP_DecryptInit(ctx, EVP_aes_256_gcm(), key, iv);
+    int ok = EVP_DecryptInit(ctx, EVP_aes_256_gcm(), key, iv);
 
     while (current_pos < auth_tag_pos) {
         size_t in_nbytes_left = auth_tag_pos - current_pos;
@@ -116,7 +116,7 @@ int decrypt(FILE* in_file, FILE* out_file, const unsigned char* key, size_t auth
     EVP_CIPHER_CTX_ctrl(ctx, EVP_CTRL_GCM_SET_TAG, AUTH_TAG_LENGTH, auth_tag);
 
     int out_nbytes = 0;
-    int ok = EVP_DecryptFinal(ctx, out_buf, &out_nbytes);
+    ok = EVP_DecryptFinal(ctx, out_buf, &out_nbytes);
     fwrite(out_buf, 1, out_nbytes, out_file);
 
     if (ferror(in_file) || ferror(out_file)) {

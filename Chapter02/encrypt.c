@@ -84,7 +84,7 @@ int encrypt(FILE* in_file, FILE* out_file, const unsigned char* key, FILE* error
     fwrite(iv, 1, IV_LENGTH, out_file);
 
     ctx = EVP_CIPHER_CTX_new();
-    EVP_EncryptInit(ctx, EVP_aes_256_gcm(), key, iv);
+    int ok = EVP_EncryptInit(ctx, EVP_aes_256_gcm(), key, iv);
 
     while (!feof(in_file)) {
         size_t in_nbytes = fread(in_buf, 1, BUF_SIZE, in_file);
@@ -98,7 +98,7 @@ int encrypt(FILE* in_file, FILE* out_file, const unsigned char* key, FILE* error
     EVP_EncryptFinal(ctx, out_buf, &out_nbytes);
     fwrite(out_buf, 1, out_nbytes, out_file);
 
-    int ok = EVP_CIPHER_CTX_ctrl(ctx, EVP_CTRL_GCM_GET_TAG, AUTH_TAG_LENGTH, auth_tag);
+    ok = EVP_CIPHER_CTX_ctrl(ctx, EVP_CTRL_GCM_GET_TAG, AUTH_TAG_LENGTH, auth_tag);
     fwrite(auth_tag, 1, AUTH_TAG_LENGTH, out_file);
 
     if (ferror(in_file) || ferror(out_file)) {
