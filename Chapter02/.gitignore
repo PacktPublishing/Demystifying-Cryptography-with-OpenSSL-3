@@ -1,0 +1,8 @@
+/decrypt
+/decrypt-with-extended-error-checking
+/encrypt
+/encrypt-with-extended-error-checking
+/init
+/somefile.txt
+/somefile.txt.decrypted
+/somefile.txt.encrypted
