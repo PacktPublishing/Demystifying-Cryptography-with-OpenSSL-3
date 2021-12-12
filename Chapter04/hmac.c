@@ -73,7 +73,7 @@ int calculate_hmac(FILE* in_file, const unsigned char* key, size_t key_length, u
 
     OSSL_PARAM params[] = {
         OSSL_PARAM_construct_utf8_string(
-            OSSL_MAC_PARAM_DIGEST, OSSL_DIGEST_NAME_SHA3_256, 0),
+            OSSL_MAC_PARAM_DIGEST, OSSL_DIGEST_NAME_SHA2_256, 0),
         OSSL_PARAM_construct_end()
     };
 
