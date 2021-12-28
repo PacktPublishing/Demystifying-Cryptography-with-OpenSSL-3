@@ -1,0 +1,28 @@
+= Code examples for the "Demystifying Cryptography with OpenSSL 3.0" book
+:source-highlighter: rouge
+
+This Git repository contains code examples.
+All code examples are written in C.
+
+== How to build on Unix/Linux
+
+It is very easy to build the code examples on Linux or another Unix-compatible system with GNU Make, such as macOS or even Cygwin.
+
+=== Prerequisites
+
+1. Install essential build tools: C compiler, linker, GNU Make.
+2. Build OpenSSL 3.0 and install it to /opt/openssl-3.0.0/ .
+
+=== Build code examples
+
+1. Enter a directory containing the code examples for a particular chapter, for example:
+[source,shell]
+----
+cd Chapter02
+----
+
+2. Build with GNU Make:
+[source,shell]
+----
+make
+----
