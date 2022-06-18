@@ -1,4 +1,5 @@
 /crl-check
+/ocsp-check
 /verify-callback
 /*.bak
 /*.pem
