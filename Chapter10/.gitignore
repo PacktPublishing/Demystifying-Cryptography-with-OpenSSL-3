@@ -1,5 +1,8 @@
 /crl-check
 /ocsp-check
+/tls-client2
+/tls-server2
 /verify-callback
 /*.bak
+/*.p12
 /*.pem
