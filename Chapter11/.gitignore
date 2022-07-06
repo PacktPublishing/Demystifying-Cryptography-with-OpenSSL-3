@@ -1,0 +1,4 @@
+/tls-cert-pinning
+/*.bak
+/*.p12
+/*.pem
