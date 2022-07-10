@@ -1,5 +1,6 @@
-/tls-client-non-blocking
 /tls-cert-pinning
+/tls-client-memory-bio
+/tls-client-non-blocking
 /*.bak
 /*.p12
 /*.pem
