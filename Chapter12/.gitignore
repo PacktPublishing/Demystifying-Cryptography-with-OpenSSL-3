@@ -1,0 +1,6 @@
+*.bak
+*.der
+*.p12
+*.pem
+crlnumber.txt*
+index.txt*

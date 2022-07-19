@@ -1,0 +1,63 @@
+[ca]
+default_ca = CA_default
+
+[CA_default]
+database                = index.txt
+new_certs_dir           = issued
+
+certificate             = root_cert.pem
+private_key             = private/root_keypair.pem
+
+default_days            = 3650
+default_md              = default
+rand_serial             = yes
+unique_subject          = no
+name_opt                = ca_default
+cert_opt                = ca_default
+
+policy                  = policy_intermediate_cert
+
+x509_extensions         = v3_intermediate_cert
+copy_extensions         = copy
+
+crl_extensions          = crl_extensions_root_ca
+crlnumber               = crlnumber.txt
+default_crl_days        = 30
+
+[req]
+prompt                  = no
+distinguished_name      = distinguished_name_root_cert
+
+[distinguished_name_root_cert]
+countryName             = NO
+stateOrProvinceName     = Oslo
+localityName            = Oslo
+organizationName        = TLS Experts
+commonName              = Root CA
+
+[policy_intermediate_cert]
+countryName             = match
+stateOrProvinceName     = match
+localityName            = match
+organizationName        = match
+organizationalUnitName  = optional
+commonName              = supplied
+emailAddress            = optional
+
+[v3_root_cert]
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always, issuer
+basicConstraints = critical, CA:TRUE
+keyUsage = critical, digitalSignature, cRLSign, keyCertSign
+crlDistributionPoints = URI:http://crl.tls-experts.no/root_crl.der
+
+[v3_intermediate_cert]
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always, issuer
+basicConstraints = critical, CA:TRUE, pathlen:0
+keyUsage = critical, digitalSignature, cRLSign, keyCertSign
+crlDistributionPoints = URI:http://crl.tls-experts.no/root_crl.der
+
+[crl_extensions_root_ca]
+authorityKeyIdentifier = keyid:always, issuer
+crlDistributionPoints = URI:http://crl.tls-experts.no/root_crl.der
