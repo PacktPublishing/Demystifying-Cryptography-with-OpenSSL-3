@@ -77,3 +77,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 ## Get to Know the Author
 **Alexei Khlebnikov**
 has more than 20 years of professional experience in IT where he has worked in a host of different roles – software developer, system administrator, DevOps engineer, technical leader, architect, and project manager. During these years, Alexei has worked with many technologies – security, artificial intelligence, web development, embedded, mobile, and robotics. Among other companies, Alexei worked for Opera Software on the famous Opera internet browser. Alexei has always been interested in security. He was one of the maintainers of the security-related Opera browser modules, responsible for cryptography, SSL/TLS, and integration with OpenSSL. He was also a member of the security architect group, responsible for the security of the Opera browser. Now, Alexei lives in Oslo, Norway, and works as a senior consultant for bspoke AS. He is also the leader of the architect group at his current employer.
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781800560345">https://packt.link/free-ebook/9781800560345 </a> </p>
