@@ -72,6 +72,29 @@ With the following software and hardware list you can run all code files present
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://packt.link/c0WEO).
 
+### Errata
+* Page 128(Point 4):
+```
+openssl pkeyutl \
+-verify \
+-digest sha3-512 \
+-inkey ec_keypair.pem \
+-in somefile.txt \
+-rawin \
+-sigfile somefile.txt.signature
+```
+_should be_
+
+```
+openssl pkeyutl \
+-verify \
+-digest sha3-512 \
+-pubin -inkey ec_public_key.pem \
+-in somefile.txt \
+-rawin \
+-sigfile somefile.txt.signature
+```
+
 ### Related products
 * Cryptography Algorithms [[Packt]](https://www.packtpub.com/product/cryptography-algorithms/9781789617139/?utm_source=github&utm_medium=repository&utm_campaign=9781789617139) [[Amazon]](https://www.amazon.com/dp/1789617138)
 
