@@ -94,6 +94,22 @@ openssl pkeyutl \
 -rawin \
 -sigfile somefile.txt.signature
 ```
+* Page 302(Line 14):
+```
+openssl ca \
+ -config intermediate.cnf \
+ -in ../ocsp/ocsp_csr.pem \
+ -out ../ocsp/ocsp_cert.pem
+```
+_should be_
+```
+openssl ca \
+ -config intermediate.cnf \
+ -extensions v3_ocsp_cert \
+ -in ../ocsp/ocsp_csr.pem \
+ -out ../ocsp/ocsp_cert.pem
+```
+
 
 ### Related products
 * Cryptography Algorithms [[Packt]](https://www.packtpub.com/product/cryptography-algorithms/9781789617139/?utm_source=github&utm_medium=repository&utm_campaign=9781789617139) [[Amazon]](https://www.amazon.com/dp/1789617138)
