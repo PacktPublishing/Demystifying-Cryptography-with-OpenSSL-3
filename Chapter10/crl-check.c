@@ -280,7 +280,6 @@ int verify_callback(int preverify_ok, X509_STORE_CTX* x509_store_ctx) {
     fprintf(error_stream, "\n");
 
     BIO_free(mem_bio);
-    X509_free(current_cert);
 
     if (error_code == X509_V_ERR_UNABLE_TO_GET_CRL)
         return 1;
