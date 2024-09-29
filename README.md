@@ -94,6 +94,17 @@ openssl pkeyutl \
 -rawin \
 -sigfile somefile.txt.signature
 ```
+
+* Page 200(Line 3):
+```
+BIO_free(mem_bio);
+X509_free(current_cert);
+```
+_should be_
+```
+BIO_free(mem_bio);
+```
+
 * Page 302(Line 14):
 ```
 openssl ca \
